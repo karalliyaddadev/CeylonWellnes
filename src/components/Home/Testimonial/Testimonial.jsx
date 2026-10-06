@@ -1,7 +1,34 @@
 import styles from "./Testimonial.module.css";
 import Image from "next/image";
 
-export default function Testimonial() {
+export default function Testimonial({ testimonials, eyebrow, heading }) {
+  if (testimonials) {
+    return (
+      <section className={styles.section} aria-labelledby="corporate-testimonial-title">
+        <div className={styles.headingBox}>
+          <p className={styles.eyebrow}>{eyebrow}</p>
+          <h2 id="corporate-testimonial-title" className={styles.title1}>{heading}</h2>
+        </div>
+        <div className={styles.corporateContainer}>
+          {testimonials.map((testimonial, index) => (
+            <article className={`${styles.card} ${styles.corporateCard} ${styles[`card${index + 1}`]}`} key={testimonial.name}>
+              <Image
+                src={testimonial.image.src}
+                alt={testimonial.image.alt}
+                className={styles.img}
+                width={48}
+                height={48}
+              />
+              <h3 className={styles.name}>{testimonial.name}</h3>
+              <p className={styles.title}>{testimonial.role}, {testimonial.company}</p>
+              <p className={styles.mainQuote}>{testimonial.quote}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
   return (
     <div className={styles.section}>
 

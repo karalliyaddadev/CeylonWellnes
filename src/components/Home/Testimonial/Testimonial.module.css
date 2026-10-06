@@ -78,6 +78,47 @@
   background: var(--bg-color);
 }
 
+.corporateContainer {
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.corporateCard {
+  width: 100%;
+  min-height: 285px;
+  align-content: start;
+  margin: 0;
+}
+
+.corporateCard .mainQuote {
+  font-family: var(--font-baskerville), serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.corporateCard .title {
+  align-self: center;
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 600px) {
+  .corporateContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .corporateContainer {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 
 
 

@@ -103,6 +103,16 @@ const Navbar = () => {
 
             <li>
               <Link
+                href="/corporate-adventures"
+                className={pathname === "/corporate-adventures" ? styles.active : styles.link}
+                onClick={() => setOpen(false)}
+              >
+                Corporate Adventures
+              </Link>
+            </li>
+
+            <li>
+              <Link
                 href="/contact"
                 className={styles.contactButton}
                 onClick={() => setOpen(false)}
